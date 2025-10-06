@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lilian Aucouturier - Portfolio CAD Aéronautique</title>
+    <meta name="description" content="Portfolio de Lilian Aucouturier - Ingénieur Aéronautique & Spatial spécialisé en conception CAD">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+
+</head>
+<body>
+    <!-- BARRE DE PROGRESSION SOUS LA NAVIGATION -->
+    <div class="progress-container">
+        <div class="progress-bar"></div>
+    </div>
+
+    <header>
+        <div class="header-content">
+            <h1>Lilian Aucouturier</h1>
+            <div class="subtitle">Ingénieur Aéronautique & Spatial</div>
+            <div class="subtitle">Recherche d'un stage de fin d'étude Février-Juillet 2026</div>
+            <div class="contact-info">
+                <!-- LIEN TÉLÉPHONE -->
+                <a href="tel:+33661550578" class="contact-item" aria-label="Appeler Lilian Aucouturier au 06 61 55 05 78">
+                    <i class="fas fa-mobile-alt"></i> 06 61 55 05 78
+                </a>
+                <!-- LIEN EMAIL POUR OUVRIR LE CLIENT DE MESSAGERIE -->
+                <a href="mailto:Lilian75014@gmail.com?subject=Contact%20depuis%20votre%20portfolio&body=Bonjour%20Lilian," class="contact-item" aria-label="Envoyer un e-mail à Lilian Aucouturier">
+                    <i class="fas fa-envelope"></i> Lilian75014@gmail.com
+                </a>
+                <!-- LIEN ADRESSE POUR GOOGLE MAPS -->
+                <a href="https://www.google.com/maps/search/?api=1&query=5+ter+rue+d'Alésia+75014+Paris" target="_blank" class="contact-item" aria-label="Ouvrir l’adresse de Lilian Aucouturier sur Google Maps">
+                    <i class="fas fa-map-marker-alt"></i> Paris 75014
+                </a>
+                <div class="contact-item">
+                    <i class="fas fa-car"></i> Permis B
+                </div>
+            </div>
+            <!-- BOUTON TÉLÉCHARGEMENT CV - AVEC ATTRIBUT DOWNLOAD -->
+            <a href="assets/docs/CV_Lilian_Aucouturier.pdf" download="CV_Lilian_Aucouturier.pdf" class="cv-download-btn" aria-label="Télécharger le CV de Lilian Aucouturier">
+                <i class="fas fa-download"></i> Télécharger mon CV
+            </a>
+        </div>
+    </header>
+
+    <!-- NAVIGATION AVEC INDICATEUR -->
+    <nav>
+        <div class="nav-container">
+            <ul>
+                <li><a href="#profil" class="active" aria-label="Aller à la section Profil professionnel">Profil</a></li>
+                <li><a href="#projets" aria-label="Aller à la section Projets CAD et conception">Projets CAD</a></li>
+                <li><a href="#experience" aria-label="Aller à la section Expériences professionnelles">Expérience</a></li>
+                <li><a href="#formation" aria-label="Aller à la section Formation">Formation</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section id="profil" class="section">
+            <h2>Profil Professionnel</h2>
+            <p>Étudiant en 5ème année d'ingénierie aéronautique et spatial à l'IPSA, passionné par la conception mécanique, les systèmes aérospatiaux et la modélisation 3D. Expérience solide en conception CAD, paramétrage avancé et gestion de projets techniques complexes. À la recherche d'un stage de fin d'études de 6 mois à partir de février 2026 dans le domaine de la conception ou bureau d'études.</p>
+        </section>
+
+        <section id="competences" class="section">
+            <h2>Compétences Techniques</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3><i class="fas fa-cogs"></i> Conception & Calculs</h3>
+                    <ul>
+                        <li>CATIA V5 </li>
+                        <li>ABAQUS </li>
+                        <li>NASTRAN - Analyse structurelle</li>
+                        <li>Star CCM+ - CFD</li>
+                        <li>Amesim</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-code"></i> Programmation</h3>
+                    <ul>
+                        <li>Python - Scripting & Analyse</li>
+                        <li>MATLAB - Calcul scientifique</li>
+                        <li>Automatisation CATIA V5</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-project-diagram"></i> Gestion de Projet</h3>
+                    <ul>
+                        <li>Planification de projet</li>
+                        <li>Gestion d'équipe</li>
+                        <li>Répartition des tâches</li>
+                        <li>Respect des délais</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-language"></i> Langues</h3>
+                    <ul>
+                        <li>Français - C1 (Langue maternelle)</li>
+                        <li>Anglais - B2 (TOEIC 860)</li>
+                        <li>Espagnol - A2 (Niveau lycée)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="projets" class="section">
+            <div class="section-header">
+                <h2>Projets CAD & Conception</h2>
+            </div>
+            
+            <div class="project-card collapsed">
+                <div class="project-image">
+                    <i class="fas fa-cog"></i>
+                    <div class="project-overlay">
+                        <div class="project-overlay-content">
+                            <h3>Voir les détails</h3>
+                            <p>Cliquez pour explorer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3>Moteur Thermique Paramétré</h3>
+                    <div class="expand-indicator">
+                        <i class="fas fa-chevron-down"></i> Voir le projet
+                    </div>
+
+                    <p>Conception et paramétrage complet d'un moteur thermique avec trois configurations différentes (ligne, plat, V). Développement d'un système de paramétrage avancé permettant de modifier automatiquement les dimensions et la géométrie des pièces en fonction de la puissance souhaitée.</p>
+
+                    
+                    <div class="project-technologies">
+                        <span class="tech-tag" data-tooltip="Conception Assistée par Ordinateur">CATIA V5</span>
+                        <span class="tech-tag" data-tooltip="Paramétrage avancé des pièces">Paramétrage Avancé</span>
+                        <span class="tech-tag" data-tooltip="Assemblage de systèmes complexes">Assemblage Complexe</span>
+                        <span class="tech-tag" data-tooltip="Mécanique des moteurs thermiques">Mécanique des Moteurs</span>
+                    </div>
+                    
+                    <div class="project-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Rôle :</span>
+                            <span>Chef paramétrage</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Durée :</span>
+                            <span>4 mois</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Équipe :</span>
+                            <span>3 personnes</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-features">
+                        <h4>Fonctionnalités principales :</h4>
+                        <div class="features-grid">
+                            <div class="feature-item">
+                                <div class="feature-icon"><i class="fas fa-sliders-h"></i></div>
+                                <div>Paramétrage utilisateur</div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon"><i class="fas fa-shapes"></i></div>
+                                <div>3 configurations moteur</div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon"><i class="fas fa-calculator"></i></div>
+                                <div>Calculs automatiques</div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon"><i class="fas fa-sync-alt"></i></div>
+                                <div>Mise à jour dynamique</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-card collapsed">
+                <div class="project-image">
+                    <i class="fas fa-train"></i>
+                    <div class="project-overlay">
+                        <div class="project-overlay-content">
+                            <h3>Voir les détails</h3>
+                            <p>Cliquez pour explorer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3>Locomotive Transsibérien</h3>
+                    <div class="expand-indicator">
+                        <i class="fas fa-chevron-down"></i> Voir le projet
+                    </div>
+                    <p>Modélisation complète et détaillée d'une locomotive à vapeur historique du Transsibérien. Étude approfondie du fonctionnement du système vapeur, transmission et mécanismes complexes. Création de l'ensemble des pièces, assemblages et documentation technique.</p>
+                    
+                    <div class="project-technologies">
+                        <span class="tech-tag" data-tooltip="Conception Assistée par Ordinateur">CATIA V5</span>
+                        <span class="tech-tag" data-tooltip="Générative Shape Design">GSD</span>
+                        <span class="tech-tag" data-tooltip="Assemblage de systèmes complexes">Assemblage Complexe</span>
+                        <span class="tech-tag" data-tooltip="Dessins techniques détaillés">Dessin Technique</span>
+                    </div>
+                    
+                    <div class="project-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Rôle :</span>
+                            <span>Système roue </span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Durée :</span>
+                            <span>3 mois</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Équipe :</span>
+                            <span>4 personnes</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-features">
+                        <h4>Composants modélisés :</h4>
+                        <div class="features-grid">
+                            <div class="feature-item">
+                                <div class="feature-icon"><i class="fas fa-cog"></i></div>
+                                <div>Système roue complet</div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                <div>Liaison avec le mécanisme piston</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-card collapsed">
+                <div class="project-image">
+                    <i class="fas fa-star"></i>
+                    <div class="project-overlay">
+                        <div class="project-overlay-content">
+                            <h3>Voir les détails</h3>
+                            <p>Cliquez pour explorer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3>Moteur en Étoile</h3>
+                    <div class="expand-indicator">
+                        <i class="fas fa-chevron-down"></i> Voir le projet
+                    </div>
+                    <p>Conception détaillée d'un moteur en étoile à 7 cylindres avec système de transmission complexe. Modélisation de l'ensemble des composants, création de la documentation technique complète et des plans d'assemblage détaillés. Étude des contraintes mécaniques et thermiques.</p>
+                    
+                    <div class="project-technologies">
+                        <span class="tech-tag" data-tooltip="Conception Assistée par Ordinateur">CATIA V5</span>
+                        <span class="tech-tag" data-tooltip="Design de pièces mécaniques">Part Design</span>
+                        <span class="tech-tag" data-tooltip="Dessins techniques détaillés">Dessin Technique</span>
+                        <span class="tech-tag" data-tooltip="Moteurs pour applications aéronautiques">Moteurs Aéronautiques</span>
+                    </div>
+                    
+                    <div class="project-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Rôle :</span>
+                            <span>Design et documentation</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Durée :</span>
+                            <span>2 mois</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Équipe :</span>
+                            <span>Projet individuel</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-features">
+                        <h4>Composants principaux :</h4>
+                        <div class="features-grid">
+                            <div class="feature-item">
+                                <div class="feature-icon"><i class="fas fa-circle"></i></div>
+                                <div>Corps principal</div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon"><i class="fas fa-link"></i></div>
+                                <div>Bielles (principale + auxiliaires)</div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon"><i class="fas fa-arrows-alt-v"></i></div>
+                                <div>7 Pistons & Chemises</div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon"><i class="fas fa-propeller"></i></div>
+                                <div>Hélice (cône + pâles)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="section">
+            <h2>Expériences Professionnelles</h2>
+            <div class="experience-cards">
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <div>
+                            <h3 class="experience-title">Stage Assistant Ingénieur Méthodes Supply Chain</h3>
+                            <div class="experience-company">Safran Aerosystems</div>
+                            <div class="experience-location">
+                                <!-- LIEN GOOGLE MAPS POUR SAFRAN CORRIGÉ -->
+                                <a href="https://www.google.com/maps/search/?api=1&query=Safran+Aerosystems+61+Rue+Pierre+Curie+78370+Plaisir" target="_blank" class="location-link" aria-label="Voir l’emplacement de Safran Aerosystems à Plaisir sur Google Maps">
+                                    <i class="fas fa-map-marker-alt"></i> 61 Rue Pierre Curie, 78370 Plaisir
+                                </a>
+                            </div>
+                        </div>
+                        <div class="experience-date">2025</div>
+                    </div>
+                    <ul class="experience-details">
+                        <li>Construction d'un référentiel documentaire commun (procédures, manuels utilisateurs, ...)</li>
+                        <li>Participation aux chantiers d'amélioration continue (One Safran, Lean Sigma) jalonnant la feuille de route SC de la division</li>
+                        <li>Réalisation de tâches opérationnelles au sein de l'équipe SC dans un rôle d'ingénieur méthodes Supply Chain</li>
+                    </ul>
+                    <!-- BOUTON RAPPORT DE STAGE SAFRAN - AVEC ATTRIBUT DOWNLOAD -->
+                    <div class="experience-actions">
+                        <a href="assets/docs/Rapport_Stage_Safran_Aerosystems.pdf" download="Rapport_Stage_Safran_Aerosystems.pdf" class="report-download-btn" aria-label="Télécharger le rapport de stage Safran Aerosystems">
+                            <i class="fas fa-file-pdf"></i> Télécharger le rapport de stage
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <div>
+                            <h3 class="experience-title">Stage Technicien de Maintenance Aéronautique</h3>
+                            <div class="experience-company">Air France Industries</div>
+                            <div class="experience-location">
+                                <!-- LIEN GOOGLE MAPS POUR ORLY CORRIGÉ -->
+                                <a href="https://www.google.com/maps/search/?api=1&query=Air+France+Industries+Aéroport+Orly" target="_blank" class="location-link" aria-label="Voir l’emplacement d’Air France Industries à Orly sur Google Maps">
+                                    <i class="fas fa-map-marker-alt"></i> Aéroport d'Orly
+                                </a>
+                            </div>
+                        </div>
+                        <div class="experience-date">2023</div>
+                    </div>
+                    <ul class="experience-details">
+                        <li>Intégration des moteurs LEAP 1A & 1B dans la chaîne de maintenance</li>
+                        <li>Participation aux opérations de maintenance sur moteurs d'avion</li>
+                        <li>Découverte des procédures de maintenance aéronautique</li>
+                    </ul>
+                    <!-- BOUTON RAPPORT DE STAGE AIR FRANCE - AVEC ATTRIBUT DOWNLOAD -->
+                    <div class="experience-actions">
+                        <a href="assets/docs/Rapport_Stage_Air_France.pdf" download="Rapport_Stage_Air_France.pdf" class="report-download-btn" aria-label="Télécharger le rapport de stage Air France Industries">
+                            <i class="fas fa-file-pdf"></i> Télécharger le rapport de stage
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <div>
+                            <h3 class="experience-title">Technicien de Maintenance</h3>
+                            <div class="experience-company">Bouygues Énergie & Services</div>
+                            <div class="experience-location">
+                                <!-- LIEN GOOGLE MAPS POUR MINISTÈRE DES ARMÉES CORRIGÉ -->
+                                <a href="https://www.google.com/maps/search/?api=1&query=Ministère+des+Armées+75015+Paris" target="_blank" class="location-link" aria-label="Voir l’emplacement du Ministère des Armées à Paris sur Google Maps">
+                                    <i class="fas fa-map-marker-alt"></i> Ministère des armées, 75015 Paris
+                                </a>
+                            </div>
+                        </div>
+                        <div class="experience-date">2022 & 2023</div>
+                    </div>
+                    <ul class="experience-details">
+                        <li>Gestion des stocks d'une valeur de 2.2M€ et plus de 5000 références</li>
+                        <li>Inventaire, étiquetage et rédaction des procédures</li>
+                        <li>Utilisation de la FMAO, reporting, entrée/sortie des stocks</li>
+                    </ul>
+                    <!-- BOUTON RAPPORT DE STAGE MINISTERE DES ARMEES - AVEC ATTRIBUT DOWNLOAD -->
+                    <div class="experience-actions">
+                        <a href="assets/docs/Rapport_Stage_Balard.pdf" download="Rapport_Stage_Balard.pdf" class="report-download-btn" aria-label="Télécharger le rapport de stage au Ministère des Armées">
+                            <i class="fas fa-file-pdf"></i> Télécharger le rapport de stage
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <div>
+                            <h3 class="experience-title">Technicien de Maintenance</h3>
+                            <div class="experience-company">Bouygues Énergie & Services</div>
+                            <div class="experience-location">
+                                <!-- LIEN GOOGLE MAPS POUR TGI PARIS CORRIGÉ -->
+                                <a href="https://www.google.com/maps/search/?api=1&query=Tribunal+de+Grande+Instance+de+Paris+75017+Paris" target="_blank" class="location-link" aria-label="Voir l’emplacement du Tribunal de Grande Instance de Paris sur Google Maps">
+                                    <i class="fas fa-map-marker-alt"></i> Tribunal de Grande Instance de Paris, 75017 Paris
+                                </a>
+                            </div>
+                        </div>
+                        <div class="experience-date">2021</div>
+                    </div>
+                    <ul class="experience-details">
+                        <li>Maintenance du nouveau TGI (Tribunal de Grande Instance)</li>
+                        <li>Gestion des stocks : inventaire, rédaction des procédures, suivi d'un plan d'action</li>
+                        <li>Découverte de l'environnement SI : FMAO, reporting</li>
+                    </ul>
+                    <!-- BOUTON RAPPORT DE STAGE TGI - AVEC ATTRIBUT DOWNLOAD -->
+                    <div class="experience-actions">
+                        <a href="assets/docs/Rapport_Stage_TGI.pdf" download="Rapport_Stage_TGI.pdf" class="report-download-btn" aria-label="Télécharger le rapport de stage au Tribunal de Grande Instance de Paris">
+                            <i class="fas fa-file-pdf"></i> Télécharger le rapport de stage
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="formation" class="section">
+            <h2>Formation</h2>
+            <div class="education-container">
+                <div class="education-card">
+                    <div class="education-header">
+                        <div>
+                            <h3 class="education-title">Diplôme d'Ingénieur Aéronautique & Spatial</h3>
+                            <div class="education-school">IPSA Paris</div>
+                            <div class="education-location">
+                                <a href="https://www.google.com/maps/search/?api=1&query=IPSA+Paris+63+Boulevard+de+Brandebourg+94200+Ivry-sur-Seine" target="_blank" class="location-link" aria-label="Voir l’emplacement de l’IPSA Paris sur Google Maps">
+                                     <i class="fas fa-map-marker-alt"></i> 63 Boulevard de Brandebourg, 94200 Ivry-sur-Seine
+                                </a>
+                            </div>
+                        </div>
+                        <div class="education-date">2021-2026</div>
+                    </div>
+                    <ul class="education-details">
+                        <li>Option CAE - Véhicules aérospatiaux et mécanique des structures aéronautiques</li>
+                        <li>Projet PMI : Développement d'un outil d'inspection pour injecteurs moteur GE90 en partenariat avec Air France</li>
+                        <li>Semestre international à California State University of Long Beach (USA)</li>
+                        <li>Obtention du BIA (Brevet d'Initiation Aéronautique)</li>
+                    </ul>
+                    <div class="education-highlights">
+                        <div class="highlight-tags">
+                            <span class="highlight-tag">CATIA V5</span>
+                            <span class="highlight-tag">ABAQUS</span>
+                            <span class="highlight-tag">NASTRAN</span>
+                            <span class="highlight-tag">Star CCM+</span>
+                            <span class="highlight-tag">Python</span>
+                            <span class="highlight-tag">MATLAB</span>
+                            <span class="highlight-tag">Amesim</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="education-card">
+                    <div class="education-header">
+                        <div>
+                            <h3 class="education-title">Baccalauréat Scientifique</h3>
+                            <div class="education-school">Lycée Pierre-Gilles de Gennes – ENCPB</div>
+                            <div class="education-location">
+                                <a href="https://www.google.com/maps/search/?api=1&query=Lycée+Pierre-Gilles+de+Gennes+ENCPB+Paris" target="_blank" class="location-link" aria-label="Voir l’emplacement du Lycée Pierre-Gilles de Gennes ENCPB sur Google Maps">
+                                     <i class="fas fa-map-marker-alt"></i> 11 Rue Pirandello, 75013 Paris
+                                </a>
+                            </div>
+                        </div>
+                        <div class="education-date">2021</div>
+                    </div>
+                    <ul class="education-details">
+                        <li>Options mathématiques & physique</li>
+                    </ul>
+                    <div class="education-highlights">
+                        <div class="highlight-tags">
+                            <span class="highlight-tag">Mathématiques</span>
+                            <span class="highlight-tag">Physique</span>
+                            <span class="highlight-tag">Sciences de l'ingénieur</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <h3>Lilian Aucouturier</h3>
+            <p>Ingénieur Aéronautique & Spatial</p>
+            <div class="contact-info">
+                <a href="tel:+33661550578" class="contact-item" aria-label="Appeler Lilian Aucouturier au 06 61 55 05 78">
+                    <i class="fas fa-mobile-alt"></i> 06 61 55 05 78
+                </a>
+                <!-- LIEN EMAIL DANS LE FOOTER AUSSI -->
+                <a href="mailto:Lilian75014@gmail.com?subject=Contact%20depuis%20votre%20portfolio&body=Bonjour%20Lilian," class="contact-item" aria-label="Envoyer un e-mail à Lilian Aucouturier">
+                    <i class="fas fa-envelope"></i> Lilian75014@gmail.com
+                </a>
+                <!-- LIEN ADRESSE POUR GOOGLE MAPS DANS LE FOOTER CORRIGÉ -->
+                <a href="https://www.google.com/maps/search/?api=1&query=5+ter+rue+d'Alésia+75014+Paris" target="_blank" class="contact-item" aria-label="Ouvrir l’adresse de Lilian Aucouturier sur Google Maps">
+                    <i class="fas fa-map-marker-alt"></i> 5 ter rue d'Alésia, 75014 Paris
+                </a>
+            </div>
+            <div class="social-links">
+                <!-- LIEN LINKEDIN CORRECT -->
+                <a href="https://www.linkedin.com/in/lilian-aucouturier-511b98210/" target="_blank" class="social-link" aria-label="Ouvrir le profil LinkedIn de Lilian Aucouturier">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                <!-- LIEN EMAIL DANS LES ICÔNES SOCIALES -->
+                <a href="mailto:Lilian75014@gmail.com?subject=Contact%20depuis%20votre%20portfolio&body=Bonjour%20Lilian," class="social-link" aria-label="Envoyer un e-mail à Lilian Aucouturier via les icônes sociales">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+            <p>&copy; 2025 Lilian Aucouturier - Tous droits réservés</p>
+        </div>
+    </footer>
+
+    <a href="#" class="back-to-top" aria-label="Revenir en haut de la page">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+</body>
+</html>
