@@ -438,16 +438,56 @@
         }
 
         .project-details {
+            display: flex;       /*  disposition flexible */
+            gap: 2rem;           /* espace entre colonnes */
+            align-items: flex-start;         /* alignement en haut */
             margin-top: 1rem;
             padding-top: 1rem;
             border-top: 1px solid #eee;
+            justify-content: space-between;
         }
-
+        
         .detail-item {
             display: flex;
             margin-bottom: 0.5rem;
         }
 
+        /* COLONNE GAUCHE : Informations texte */
+        .details-text-column {
+            flex: 1;
+            min-width: 0;  
+        }
+
+        /* Colonne de droite : Photo supplémentaire (optionnelle) */
+        .project-image-column {
+            flex: 0 0 auto;                         /* ←ne s'etend pas  */
+            text-align: right;
+            max-width: 200px;               /* ← Taille limitée */
+            min-height: 100px;              /* ← Garde la place même sans photo */
+        }        
+        /* Style de l'image de détail */
+        .project-detail-image {
+            width: 100%;
+            max-width: 100px;
+            height: auto;
+            max-height: 800px;
+            border-radius: 4px;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            object-fit: contain;
+        }
+
+        .detail-image:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-caption {
+            margin-top: 0.5rem;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            font-style: italic;
+        }
         .detail-label {
             font-weight: 600;
             min-width: 120px;
@@ -863,129 +903,127 @@
         }
 
 
-    /* STYLE POUR LES PROJETS RÉDUCTIBLES */
-            .project-card.collapsed {
-                position: relative;
-                cursor: pointer;
-                transition: all 0.4s ease;
-                border: 2px solid transparent;
-                min-height: 120px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
+/* STYLE POUR LES PROJETS RÉDUCTIBLES */
+        .project-card.collapsed {
+            position: relative;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            border: 2px solid transparent;
+            min-height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 /* Effet au survol */
-            .project-card.collapsed:hover {
-                border-color: var(--accent);
-                transform: translateY(-5px);
-            }
+        .project-card.collapsed:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+        }
+
             /* Cacher image et contenu sauf titre */
-            .project-card.collapsed .project-image,
-            .project-card.collapsed .project-content > *:not(h3) {
-                display: none;
-            }
+        .project-card.collapsed .project-image,
+        .project-card.collapsed .project-content > *:not(h3),
+        .project-card.collapsed .project-features {
+            display: none;
+        }
 
             /* Style du contenu replié */
-            .project-card.collapsed .project-content {
-                padding: 2rem !important; 
-                text-align: center;
-                position: relative;
-                width: 100%;
-            }
+        .project-card.collapsed .project-content {
+            padding: 2rem !important; 
+            text-align: center;
+            position: relative;
+            width: 100%;
+        }
 
             /* Style du titre centré */
-            .project-card.collapsed h3 {
-                margin: 0;
-                font-size: 1.5rem;
-                color: var(--dark);
-                position: relative;
-                padding: 0 3rem;
-            }
+        .project-card.collapsed h3 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: var(--dark);
+            position: relative;
+            padding: 0 3rem;
+        }
 
-            /* Indicateur central "Déplier" */
-            .project-card.collapsed .expand-indicator {
-                position: absolute;
-                bottom: 15px;
-                left: 50%;
-                transform: translateX(-50%);
-                background: var(--accent);
-                color: white;
-                padding: 6px 15px;
-                border-radius: 20px;
-                font-size: 0.8rem;
-                opacity: 0;
-                transition: all 0.3s ease;
-                display: flex;
-                align-items: center;
-                gap: 5px;
-            }
+/* Indicateur central "Déplier" */
+        .project-card.collapsed .expand-indicator {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent);
+            color: white;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            opacity: 0;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
 
             /* Afficher indicateur au survol */
-            .project-card.collapsed:hover .expand-indicator {
-                opacity: 1;
-                transform: translateX(-50%) translateY(-5px);
-            }
+        .project-card.collapsed:hover .expand-indicator {
+            opacity: 1;
+            transform: translateX(-50%) translateY(-5px);
+        }
 
             /* Flèches latérales */
-            .project-card.collapsed::before,
-            .project-card.collapsed::after {
-                content: "▼";
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
-                color: var(--accent);
-                font-size: 1rem;
-                opacity: 0.6;
-                transition: all 0.3s ease;
-            }
+        .project-card.collapsed::before,
+        .project-card.collapsed::after {
+            content: "▼";
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--accent);
+            font-size: 1rem;
+            opacity: 0.6;
+            transition: all 0.3s ease;
+        }
 
-            .project-card.collapsed::before {
-                left: 30px;
-            }
+        .project-card.collapsed::before {
+            left: 30px;
+        }
 
-            .project-card.collapsed::after {
-                right: 30px;
-            }
+        .project-card.collapsed::after {
+            right: 30px;
+        }
 
             /* Effet survol flèches */
-            .project-card.collapsed:hover::before,
-            .project-card.collapsed:hover::after {
-                opacity: 1;
-                transform: translateY(-50%) scale(1.2);
-            }
+        .project-card.collapsed:hover::before,
+        .project-card.collapsed:hover::after {
+            opacity: 1;
+            transform: translateY(-50%) scale(1.2);
+        }
 
             /* État DÉPLIÉ - tout visible */
-            .project-card:not(.collapsed) {
-                display: block;
-            }
+        .project-card:not(.collapsed) {
+            display: block;
+        }
 
-            .project-card:not(.collapsed) .project-image,
-            .project-card:not(.collapsed) .project-content > * {
-                display: block;
-            }
+        .project-card:not(.collapsed) .project-image,
+        .project-card:not(.collapsed) .project-content > * {
+            display: block;
+        }
 
-            .project-card:not(.collapsed) .project-content {
-                padding: 1.5rem;
-            }
+        .project-card:not(.collapsed) .project-content {
+            padding: 1.5rem;
+        }
 
             /* Animation d'ouverture */
-            .project-card:not(.collapsed) {
-                animation: slideDown 0.5s ease-out;
-            }
+        .project-card:not(.collapsed) {
+            animation: slideDown 0.9s ease-out;
+        }
 
-            @keyframes slideDown {
-                from {
-                    opacity: 0;
-                    transform: translateY(-20px);
-                }
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
             }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
    
-
-
-
-    
