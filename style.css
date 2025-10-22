@@ -904,126 +904,92 @@
 
 
 /* STYLE POUR LES PROJETS RÉDUCTIBLES */
-        .project-card.collapsed {
-            position: relative;
-            cursor: pointer;
-            transition: all 0.4s ease;
-            border: 2px solid transparent;
-            min-height: 120px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-/* Effet au survol */
-        .project-card.collapsed:hover {
-            border-color: var(--accent);
-            transform: translateY(-5px);
-        }
 
-            /* Cacher image et contenu sauf titre */
-        .project-card.collapsed .project-image,
-        .project-card.collapsed .project-content > *:not(h3),
-        .project-card.collapsed .project-features {
-            display: none;
-        }
+/* On cible le titre comme enfant direct de la carte */
+.project-card > h3 {
+    padding: 2rem;
+    text-align: center;
+    margin: 0;
+    font-size: 1.5rem;
+    color: var(--dark);
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    /* La bordure n'est ajoutée que si la carte est dépliée */
+    border-bottom: 1px solid transparent; 
+}
 
-            /* Style du contenu replié */
-        .project-card.collapsed .project-content {
-            padding: 2rem !important; 
-            text-align: center;
-            position: relative;
-            width: 100%;
-        }
+/* Léger effet de survol sur le titre */
+.project-card:hover > h3 {
+    background-color: #f8f9fa;
+}
 
-            /* Style du titre centré */
-        .project-card.collapsed h3 {
-            margin: 0;
-            font-size: 1.5rem;
-            color: var(--dark);
-            position: relative;
-            padding: 0 3rem;
-        }
+/* --- Style de la carte quand elle est REPLIÉE --- */
+.project-card.collapsed {
+    position: relative;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    border: 2px solid transparent;
+    background: white;
+    overflow: hidden;
+    padding: 0;
+}
+.project-card.collapsed:hover {
+    border-color: var(--accent);
+    transform: translateY(-5px);
+}
 
-/* Indicateur central "Déplier" */
-        .project-card.collapsed .expand-indicator {
-            position: absolute;
-            bottom: 15px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--accent);
-            color: white;
-            padding: 6px 15px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            opacity: 0;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
+/* Quand c'est replié, on cache l'image et le contenu */
+.project-card.collapsed .project-image,
+.project-card.collapsed .project-content {
+    display: none;
+}
 
-            /* Afficher indicateur au survol */
-        .project-card.collapsed:hover .expand-indicator {
-            opacity: 1;
-            transform: translateX(-50%) translateY(-5px);
-        }
+/* Style des flèches sur le titre (uniquement si replié) */
+.project-card.collapsed > h3::before,
+.project-card.collapsed > h3::after {
+    content: "▼";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--accent);
+    font-size: 1rem;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+.project-card.collapsed > h3::before { left: 30px; }
+.project-card.collapsed > h3::after { right: 30px; }
+.project-card.collapsed:hover > h3::before,
+.project-card.collapsed:hover > h3::after {
+    opacity: 1;
+    transform: translateY(-50%) scale(1.2);
+}
 
-            /* Flèches latérales */
-        .project-card.collapsed::before,
-        .project-card.collapsed::after {
-            content: "▼";
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--accent);
-            font-size: 1rem;
-            opacity: 0.6;
-            transition: all 0.3s ease;
-        }
+/* --- Style de la carte quand elle est DÉPLIÉE --- */
+.project-card:not(.collapsed) {
+    display: block;
+}
 
-        .project-card.collapsed::before {
-            left: 30px;
-        }
+/* Le contenu principal (texte, etc.) a maintenant son propre padding */
+.project-card:not(.collapsed) .project-content {
+    padding: 1.5rem; 
+}
 
-        .project-card.collapsed::after {
-            right: 30px;
-        }
+/* Quand déplié, on ajoute une ligne sous le titre */
+.project-card:not(.collapsed) > h3 {
+    border-bottom: 1px solid #eee;
+}
 
-            /* Effet survol flèches */
-        .project-card.collapsed:hover::before,
-        .project-card.collapsed:hover::after {
-            opacity: 1;
-            transform: translateY(-50%) scale(1.2);
-        }
+/* Animation d'ouverture */
+.project-card:not(.collapsed) {
+    animation: slideDown 0.7s ease-out;
+}
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 
-            /* État DÉPLIÉ - tout visible */
-        .project-card:not(.collapsed) {
-            display: block;
-        }
-
-        .project-card:not(.collapsed) .project-image,
-        .project-card:not(.collapsed) .project-content > * {
-            display: block;
-        }
-
-        .project-card:not(.collapsed) .project-content {
-            padding: 1.5rem;
-        }
-
-            /* Animation d'ouverture */
-        .project-card:not(.collapsed) {
-            animation: slideDown 0.9s ease-out;
-        }
-
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-   
+/* On s'assure que l'indicateur de texte est bien caché */
+.expand-indicator {
+    display: none !important;
+}
