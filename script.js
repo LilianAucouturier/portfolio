@@ -17,6 +17,26 @@ document.querySelectorAll('nav a:not(.lang-link)').forEach(link => {
     });
 });
 
+// GESTION DU BOUTON 3D
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.view-3d-btn').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation(); // Empêche de replier/déplier la carte
+            const container = this.closest('.project-image');
+            const isShowing3D = container.classList.toggle('show-3d');
+            
+            // Mise à jour du texte du bouton
+            const span = this.querySelector('span');
+            if (isShowing3D) {
+                span.textContent = span.getAttribute('data-text-close') || 'Quitter la 3D';
+            } else {
+                span.textContent = span.getAttribute('data-text-open') || 'Voir en 3D';
+            }
+        });
+    });
+});
+
+
 // BARRE DE PROGRESSION - N'AFFICHER QU'APRÈS AVOIR SCROLLÉ
 window.addEventListener('scroll', () => {
     const progressContainer = document.querySelector('.progress-container');
