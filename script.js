@@ -9,8 +9,8 @@ if (burger) {
     });
 }
 
-// Fermer le menu au clic sur un lien (mobiles)
-document.querySelectorAll('nav a').forEach(link => {
+// Fermer le menu au clic sur un lien interne (mobiles)
+document.querySelectorAll('nav a:not(.lang-link)').forEach(link => {
     link.addEventListener('click', () => {
         if (burger) burger.classList.remove('active');
         if (navLinks) navLinks.classList.remove('active');
@@ -42,7 +42,7 @@ window.addEventListener('scroll', () => {
             current = section.getAttribute('id');
         }
     });
-    document.querySelectorAll('nav a').forEach(link => {
+    document.querySelectorAll('nav a:not(.lang-link)').forEach(link => {
         link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
     });
 
