@@ -173,7 +173,40 @@
             margin: 0 auto;
             display: flex;
             justify-content: center;
+            align-items: center;
             position: relative;
+        }
+
+        /* BURGER MENU */
+        .burger {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 5px;
+            padding: 10px;
+            position: absolute;
+            left: 20px;
+            z-index: 1001;
+        }
+
+        .burger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            border-radius: 3px;
+            transition: var(--transition);
+        }
+
+        /* Animation Burger */
+        .burger.active span:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+        .burger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .burger.active span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
         }
 
         nav ul {
@@ -181,6 +214,37 @@
             display: flex;
             gap: 1.5rem;
             align-items: center;
+        }
+
+        .lang-switch {
+            position: absolute;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: white;
+            font-size: 0.85rem;
+        }
+
+        .lang-link {
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+
+        .lang-link:hover {
+            color: white;
+        }
+
+        .lang-link.active {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .lang-separator {
+            color: rgba(255,255,255,0.3);
+            font-size: 0.7rem;
         }
 
         nav a {
@@ -843,15 +907,36 @@
                 gap: 0.5rem;
             }
             
+            .burger {
+                display: flex;
+            }
+
             nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 0.8rem;
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--dark);
+                padding: 1rem 0;
+                gap: 0;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+            }
+
+            nav ul.active {
+                display: flex;
             }
             
             nav a {
-                padding: 6px 12px;
-                font-size: 0.9rem;
+                width: 100%;
+                text-align: center;
+                padding: 12px;
+                border-radius: 0;
+            }
+
+            nav a.active::after {
+                bottom: 5px;
             }
             
             h1 {

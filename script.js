@@ -1,4 +1,23 @@
-        // BARRE DE PROGRESSION - N'AFFICHER QU'APRÈS AVOIR SCROLLÉ
+        // MENU BURGER
+const burger = document.getElementById('burger');
+const navLinks = document.getElementById('nav-links');
+
+if (burger) {
+    burger.addEventListener('click', () => {
+        burger.classList.toggle('active');
+        navLinks.classList.toggle('active');
+    });
+}
+
+// Fermer le menu au clic sur un lien (mobiles)
+document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', () => {
+        if (burger) burger.classList.remove('active');
+        if (navLinks) navLinks.classList.remove('active');
+    });
+});
+
+// BARRE DE PROGRESSION - N'AFFICHER QU'APRÈS AVOIR SCROLLÉ
 window.addEventListener('scroll', () => {
     const progressContainer = document.querySelector('.progress-container');
     const progressBar = document.querySelector('.progress-bar');
