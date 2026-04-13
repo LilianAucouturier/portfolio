@@ -34,6 +34,15 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Empêcher les clics dans le model-viewer de fermer la carte
+    document.querySelectorAll('model-viewer').forEach(mv => {
+        mv.addEventListener('click', e => e.stopPropagation());
+        mv.addEventListener('mousedown', e => e.stopPropagation());
+        mv.addEventListener('mouseup', e => e.stopPropagation());
+        mv.addEventListener('pointerdown', e => e.stopPropagation());
+        mv.addEventListener('pointerup', e => e.stopPropagation());
+    });
 });
 
 
@@ -130,16 +139,20 @@ window.addEventListener('scroll', () => {
 // PROJETS DEPLIABLE AU CLIC 
          document.querySelectorAll('.project-card').forEach(card => {
             card.classList.add('collapsed');
-            card.addEventListener('click', function() {
+            card.addEventListener('click', function(e) {
+                // Si le clic vient du visualiseur 3D ou du bouton 3D, on ne replie pas
+                if (e.target.closest('model-viewer') || e.target.closest('.view-3d-btn')) return;
+                // Si le mode 3D est actif dans cette carte, on ignore le clic
+                if (this.querySelector('.project-image.show-3d')) return;
+
                 const wasCollapsed = this.classList.contains('collapsed');
                 document.querySelectorAll('.project-card').forEach(c => c.classList.add('collapsed'));
                 if (wasCollapsed) this.classList.remove('collapsed');
-
+            });
 
             card.setAttribute('tabindex', '0');
             card.addEventListener('keypress', e => {
                 if (e.key === 'Enter') card.click();
-            });
             });
         
 
