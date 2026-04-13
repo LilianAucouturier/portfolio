@@ -28,14 +28,37 @@ document.addEventListener('DOMContentLoaded', () => {
             // Mise à jour du texte du bouton
             const span = this.querySelector('span');
             if (isShowing3D) {
-                span.textContent = span.getAttribute('data-text-close') || 'Quitter la 3D';
+                span.textContent = this.getAttribute('data-text-close') || 'Quitter la 3D';
+                // Activer le premier model-config (multi-config) ou le model-viewer simple
+                const configs = container.querySelectorAll('model-viewer.model-config');
+                if (configs.length > 0) {
+                    // Multi-config : activer la première option (ou celle sélectionnée dans le select)
+                    const select = container.querySelector('.config-selector select');
+                    const selectedValue = select ? select.value : null;
+                    configs.forEach(mv => {
+                        mv.classList.toggle('active-config', mv.dataset.config === selectedValue);
+                    });
+                }
             } else {
-                span.textContent = span.getAttribute('data-text-open') || 'Voir en 3D';
+                span.textContent = this.getAttribute('data-text-open') || 'Voir en 3D';
             }
         });
     });
 
-    // Empêcher les clics dans le model-viewer de fermer la carte
+    // GESTION DU SÉLECTEUR DE CONFIGURATION (MULTI-CONFIG)
+    document.querySelectorAll('.config-selector select').forEach(select => {
+        select.addEventListener('click', e => e.stopPropagation());
+        select.addEventListener('change', function(e) {
+            e.stopPropagation();
+            const container = this.closest('.project-image');
+            const selectedConfig = this.value;
+            container.querySelectorAll('model-viewer.model-config').forEach(mv => {
+                mv.classList.toggle('active-config', mv.dataset.config === selectedConfig);
+            });
+        });
+    });
+
+    // Empêcher les clics dans le model-viewer et le sélecteur de fermer la carte
     document.querySelectorAll('model-viewer').forEach(mv => {
         mv.addEventListener('click', e => e.stopPropagation());
         mv.addEventListener('mousedown', e => e.stopPropagation());
@@ -43,7 +66,13 @@ document.addEventListener('DOMContentLoaded', () => {
         mv.addEventListener('pointerdown', e => e.stopPropagation());
         mv.addEventListener('pointerup', e => e.stopPropagation());
     });
+
+    document.querySelectorAll('.config-selector').forEach(el => {
+        el.addEventListener('click', e => e.stopPropagation());
+        el.addEventListener('mousedown', e => e.stopPropagation());
+    });
 });
+
 
 
 // BARRE DE PROGRESSION - N'AFFICHER QU'APRÈS AVOIR SCROLLÉ

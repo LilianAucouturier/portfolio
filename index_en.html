@@ -136,18 +136,47 @@
                         loading="lazy"
                         class="project-real-image">
 
-                    <!-- VISUALISEUR 3D (CUBE DE TEST) -->
+                    <!-- 3D VIEWER MULTI-CONFIG -->
                     <model-viewer 
-                        src="https://raw.githubusercontent.com/google/model-viewer/master/packages/shared-assets/models/Box.glb"
-                        ar 
-                        ar-modes="webxr scene-viewer quick-look" 
+                        src="assets/models/Moteur_flat.glb"
+                        class="model-config" data-config="flat"
                         camera-controls 
                         poster="assets/img/moteur_flat.jpg" 
                         shadow-intensity="1" 
                         auto-rotate 
                         rotation-per-second="30deg"
-                        alt="3D Test Cube">
+                        alt="Combustion Engine - Flat Configuration">
                     </model-viewer>
+                    <model-viewer 
+                        src="assets/models/Moteur_line.glb"
+                        class="model-config" data-config="line"
+                        camera-controls 
+                        shadow-intensity="1" 
+                        auto-rotate 
+                        rotation-per-second="30deg"
+                        alt="Combustion Engine - In-line Configuration"
+                        style="display:none;">
+                    </model-viewer>
+                    <model-viewer 
+                        src="assets/models/Moteur_V.glb"
+                        class="model-config" data-config="v"
+                        camera-controls 
+                        shadow-intensity="1" 
+                        auto-rotate 
+                        rotation-per-second="30deg"
+                        alt="Combustion Engine - V Configuration"
+                        style="display:none;">
+                    </model-viewer>
+
+                    <!-- CONFIGURATION SELECTOR -->
+                    <div class="config-selector" id="moteur-config-selector-en">
+                        <label for="moteur-config-en"><i class="fas fa-sliders-h"></i></label>
+                        <select id="moteur-config-en">
+                            <option value="flat" selected>Flat Engine</option>
+                            <option value="line">In-line Engine</option>
+                            <option value="v">V Engine</option>
+                        </select>
+                    </div>
 
                     <!-- TOGGLE BUTTON -->
                     <button class="view-3d-btn" data-text-open="View in 3D" data-text-close="Exit 3D">
@@ -240,6 +269,23 @@
                         loading="lazy"
                         class="project-real-image">
 
+                    <!-- 3D VIEWER TRANS-SIBERIAN -->
+                    <model-viewer 
+                        src="assets/models/transsiberien.glb"
+                        camera-controls 
+                        poster="assets/img/locomotive_1.jpg" 
+                        shadow-intensity="1" 
+                        auto-rotate 
+                        rotation-per-second="30deg"
+                        alt="Trans-Siberian Locomotive - 3D Model">
+                    </model-viewer>
+
+                    <!-- TOGGLE BUTTON -->
+                    <button class="view-3d-btn" data-text-open="View in 3D" data-text-close="Exit 3D">
+                        <i class="fas fa-cube"></i>
+                        <span>View in 3D</span>
+                    </button>
+
                 </div>
                 <div class="project-content">
                     <div class="expand-indicator">
@@ -315,6 +361,23 @@
                         style="width: 100% ; height: 100%; object-fit: contain; background: #1e3c72;"
                         loading="lazy"
                         class="project-real-image">
+
+                    <!-- 3D VIEWER RADIAL ENGINE -->
+                    <model-viewer 
+                        src="assets/models/Moteur_etoile.glb"
+                        camera-controls 
+                        poster="assets/img/moteur_en_etoile_1.jpg" 
+                        shadow-intensity="1" 
+                        auto-rotate 
+                        rotation-per-second="30deg"
+                        alt="Radial Engine - 3D Model">
+                    </model-viewer>
+
+                    <!-- TOGGLE BUTTON -->
+                    <button class="view-3d-btn" data-text-open="View in 3D" data-text-close="Exit 3D">
+                        <i class="fas fa-cube"></i>
+                        <span>View in 3D</span>
+                    </button>
 
                 </div>
                 <div class="project-content">
