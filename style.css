@@ -115,7 +115,7 @@
             transform: translateY(-2px);
         }
 
-        /* BOUTON TÉLÉCHARGEMENT CV */
+        /* BOUTON T├ëL├ëCHARGEMENT CV */
         .cv-download-btn {
             display: inline-flex;
             align-items: center;
@@ -371,7 +371,7 @@
         }
 
         .skill-category li:before {
-            content: "▸";
+            content: "Ôû©";
             position: absolute;
             left: 0;
             color: var(--accent);
@@ -522,14 +522,14 @@
             min-width: 0;  
         }
 
-        /* Colonne de droite : Photo supplémentaire (optionnelle) */
+        /* Colonne de droite : Photo suppl├®mentaire (optionnelle) */
         .project-image-column {
-            flex: 0 0 auto;                         /* ←ne s'etend pas  */
+            flex: 0 0 auto;                         /* ÔåÉne s'etend pas  */
             text-align: right;
-            max-width: 200px;               /* ← Taille limitée */
-            min-height: 100px;              /* ← Garde la place même sans photo */
+            max-width: 200px;               /* ÔåÉ Taille limit├®e */
+            min-height: 100px;              /* ÔåÉ Garde la place m├¬me sans photo */
         }        
-        /* Style de l'image de détail */
+        /* Style de l'image de d├®tail */
         .project-detail-image {
             width: 100%;
             max-width: 100px;
@@ -595,7 +595,7 @@
             margin-bottom: 0.5rem;
         }
 
-        /* MISE EN PAGE EXPÉRIENCE ET FORMATION */
+        /* MISE EN PAGE EXP├ëRIENCE ET FORMATION */
         
         .experience-cards {
             display: grid;
@@ -698,7 +698,7 @@
         }
         
         .experience-details li::before {
-            content: '▹';
+            content: 'Ôû╣';
             position: absolute;
             left: 0;
             color: var(--accent);
@@ -791,7 +791,7 @@
         }
         
         .education-details li::before {
-            content: '★';
+            content: 'Ôÿà';
             position: absolute;
             left: 0;
             color: var(--accent);
@@ -988,7 +988,7 @@
         }
 
 
-/* STYLE POUR LES PROJETS RÉDUCTIBLES */
+/* STYLE POUR LES PROJETS R├ëDUCTIBLES */
 
 /* On cible le titre comme enfant direct de la carte */
 .project-card > h3 {
@@ -1000,16 +1000,16 @@
     position: relative;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    /* La bordure n'est ajoutée que si la carte est dépliée */
+    /* La bordure n'est ajout├®e que si la carte est d├®pli├®e */
     border-bottom: 1px solid transparent; 
 }
 
-/* Léger effet de survol sur le titre */
+/* L├®ger effet de survol sur le titre */
 .project-card:hover > h3 {
     background-color: #f8f9fa;
 }
 
-/* --- Style de la carte quand elle est REPLIÉE --- */
+/* --- Style de la carte quand elle est REPLI├ëE --- */
 .project-card.collapsed {
     position: relative;
     cursor: pointer;
@@ -1024,16 +1024,16 @@
     transform: translateY(-5px);
 }
 
-/* Quand c'est replié, on cache l'image et le contenu */
+/* Quand c'est repli├®, on cache l'image et le contenu */
 .project-card.collapsed .project-image,
 .project-card.collapsed .project-content {
     display: none;
 }
 
-/* Style des flèches sur le titre (uniquement si replié) */
+/* Style des fl├¿ches sur le titre (uniquement si repli├®) */
 .project-card.collapsed > h3::before,
 .project-card.collapsed > h3::after {
-    content: "▼";
+    content: "Ôû╝";
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -1050,7 +1050,7 @@
     transform: translateY(-50%) scale(1.2);
 }
 
-/* --- Style de la carte quand elle est DÉPLIÉE --- */
+/* --- Style de la carte quand elle est D├ëPLI├ëE --- */
 .project-card:not(.collapsed) {
     display: block;
 }
@@ -1060,7 +1060,7 @@
     padding: 1.5rem; 
 }
 
-/* Quand déplié, on ajoute une ligne sous le titre */
+/* Quand d├®pli├®, on ajoute une ligne sous le titre */
 .project-card:not(.collapsed) > h3 {
     border-bottom: 1px solid #eee;
 }
@@ -1074,7 +1074,7 @@
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* On s'assure que l'indicateur de texte est bien caché */
+/* On s'assure que l'indicateur de texte est bien cach├® */
 .expand-indicator {
     display: none !important;
 }
@@ -1121,7 +1121,7 @@ model-viewer {
     height: 100%;
     background-color: #f1f1f1;
     --poster-color: transparent;
-    display: none; /* Masqué par défaut */
+    display: none; /* Masqu├® par d├®faut */
 }
 
 .project-image.show-3d .project-real-image {
@@ -1144,13 +1144,13 @@ model-viewer {
     background: var(--primary);
 }
 
-/* --- SÉLECTEUR DE CONFIGURATION MOTEUR --- */
+/* --- S├ëLECTEUR DE CONFIGURATION MOTEUR --- */
 .config-selector {
     position: absolute;
     bottom: 15px;
     left: 15px;
     z-index: 10;
-    display: none; /* Caché par défaut */
+    display: none; /* Cach├® par d├®faut */
     align-items: center;
     gap: 8px;
 }
@@ -1204,7 +1204,7 @@ model-viewer {
     padding: 8px;
 }
 
-/* Responsivité mobile pour le bouton et sélecteur */
+/* Responsivit├® mobile pour le bouton et s├®lecteur */
 @media (max-width: 768px) {
     .view-3d-btn {
         bottom: 10px;
